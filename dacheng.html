@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2E9968',
+                        gold: '#E8B86D',
+                        tech: '#54A0FF',
+                        bgcream: '#F9F9F7',
+                    },
+                    fontFamily: {
+                        sans: ['"Noto Sans SC"', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .card-shadow { box-shadow: 0 4px 16px rgba(46, 153, 104, 0.12); }
+            .card-hover { transition: all 0.3s ease; }
+            .card-hover:hover { transform: translateY(-6px); box-shadow: 0 8px 24px rgba(46, 153, 104, 0.2); }
+        }
+    </style>
+</head>
+<body class="bg-bgcream text-gray-700 font-sans">
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur shadow-sm">
+        <div class="container mx-auto px-4 py-3 flex flex-wrap items-center justify-between">
+            <a href="index.html" class="text-primary font-bold text-xl">匠心筑品·数智兴农</a>
+            <button id="menuBtn" class="md:hidden text-gray-700 text-xl"><i class="fa fa-bars"></i></button>
+            <nav id="navMenu" class="hidden w-full md:flex md:w-auto md:items-center mt-3 md:mt-0">
+                <ul class="flex flex-col md:flex-row md:gap-6">
+                    <li><a href="index.html#home" class="py-1 block hover:text-primary">首页</a></li>
+                    <li><a href="index.html#showroom" class="py-1 block hover:text-primary">农品数字展厅</a></li>
+                    <li><a href="index.html#ip-gallery" class="py-1 block hover:text-primary">IP创意馆</a></li>
+                    <li><a href="index.html#culture" class="py-1 block hover:text-primary">IP文创专区</a></li>
+                    <li><a href="index.html#h5-experience" class="py-1 block hover:text-primary">互动H5</a></li>
+                    <li><a href="index.html#service" class="py-1 block hover:text-primary">助农服务</a></li>
+                    <li><a href="index.html#join" class="py-1 block hover:text-primary">商户入驻</a></li>
+                    <li><a href="index.html#about" class="py-1 block hover:text-primary">关于我们</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="py-12 md:py-20">
+    <div class="container mx-auto px-4">
+
+        <div class="max-w-6xl mx-auto bg-white rounded-3xl card-shadow p-8 md:p-12">
+
+            <div class="grid md:grid-cols-5 gap-10 items-start">
+
+                <!-- 左侧：IP形象 -->
+                <div class="md:col-span-2 flex justify-center md:justify-start">
+                    <div class="w-72 h-72 bg-amber-100 rounded-full flex items-center justify-center overflow-hidden card-shadow">
+                        <img src="dacheng.jpg" alt="三河小熏鸡IP形象" class="w-[130%] h-[130%] object-cover">
+                    </div>
+                </div>
+
+                <!-- 右侧：标题 + IP信息 + 信息卡片 -->
+                <div class="md:col-span-3">
+
+                    <div class="flex flex-wrap items-center gap-3 mb-4">
+                        <span class="inline-block bg-amber-100 text-amber-600 px-4 py-1.5 rounded-full text-sm font-medium">
+                            地标农品
+                        </span>
+                        <span class="text-sm text-gray-500">IP形象：甜美枣宝</span>
+                    </div>
+
+                    <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-8">
+                        大城金丝小枣
+                    </h1>
+
+                    <div class="space-y-4">
+                        <div class="bg-bgcream rounded-xl p-5 border border-gray-100">
+                            <h3 class="text-amber-600 font-semibold mb-2">产地溯源</h3>
+                            <p class="text-gray-600 leading-relaxed">
+                                河北廊坊大城，历史悠久的特色枣类产区，枣果品质优良。
+                            </p>
+                        </div>
+
+                        <div class="bg-bgcream rounded-xl p-5 border border-gray-100">
+                            <h3 class="text-amber-600 font-semibold mb-2">产品亮点</h3>
+                            <p class="text-gray-600 leading-relaxed">
+                                肉厚核小，掰开可见金黄金丝，口感绵密甘甜，自然晾晒，营养丰富。
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 flex flex-wrap gap-4 items-center">
+                        <a href="#" class="bg-primary text-white px-6 py-3 rounded-full card-hover inline-block">
+                            前往官方渠道选购
+                        </a>
+                        <p class="text-xs text-gray-400">
+                            平台仅展示，不参与交易履约
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- AI短视频展示 -->
+            <div class="mt-16">
+                <h2 class="text-2xl font-bold text-center mb-8">AI数字作品展示</h2>
+
+                <div class="max-w-4xl mx-auto">
+                    <div class="bg-white rounded-2xl p-5 card-shadow border border-gray-100">
+                        <video class="w-full rounded-lg" controls poster="video-cover.jpg">
+                            <source src="dacheng-compressed.webm" type="video/mp4">
+                            您的浏览器不支持视频播放，请更换浏览器。
+                        </video>
+
+                        <h3 class="font-bold mt-4">工艺科普AI短视频</h3>
+                        <p class="text-sm text-gray-500 mt-2">
+                            演示古法熏鸡制作全过程动画短片
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+    <footer class="bg-gray-800 text-white py-10 mt-10">
+        <div class="container mx-auto px-4">
+            <div class="text-center">
+                <h3 class="text-xl font-bold mb-3">匠心筑品·数智兴农</h3>
+                <p class="text-gray-300 text-sm">廊坊农特地标产品AI数字品牌展示平台</p>
+                <div class="my-4 text-gray-400 text-xs max-w-2xl mx-auto">
+                    免责声明：本网站为品牌展示平台，站内所有商品购买链接跳转至第三方平台，本平台不直接从事食品销售，不承担交易履约、售后等相关责任。
+                </div>
+                <p class="text-gray-400 text-sm">© 2026 匠心筑品·数智兴农项目团队 | 职教双创大赛演示网站</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const navMenu = document.getElementById('navMenu');
+        menuBtn.addEventListener('click', () => navMenu.classList.toggle('hidden'));
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({behavior: 'smooth'});
+                if(!navMenu.classList.contains('hidden')) navMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
