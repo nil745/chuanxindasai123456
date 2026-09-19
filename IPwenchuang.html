@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2E9968',
+                        darkblue: '#1a2b42',
+                    },
+                    fontFamily: {
+                        sans: ['"Noto Sans SC"', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .tab-btn {
+                border:1px solid #ccc;
+                border-radius:999px;
+                padding:6px 16px;
+                transition: all 0.2s;
+            }
+            .tab-btn.active {
+                background-color:#2E9968;
+                color:white;
+                border-color:#2E9968;
+            }
+            .tab-btn:hover:not(.active) {
+                border-color:#2E9968;
+            }
+            .item-card {
+                border:1px solid #e5e7eb;
+                border-radius:12px;
+                padding:16px;
+                cursor:pointer;
+                transition:0.3s;
+            }
+            .item-card:hover {
+                box-shadow:0 4px 12px rgba(0,0,0,0.08);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-700 font-sans">
+    <!-- 顶部导航 -->
+    <header class="bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-3 flex flex-wrap items-center justify-between">
+            <a href="index.html" class="text-primary font-bold text-xl">匠心筑品·数智兴农</a>
+            <nav class="hidden md:flex gap-6 text-sm">
+                <a href="index.html">首页</a>
+                <a href="#index.html#showroom">农品数字展厅</a>
+                <a href="#index.html#ip-gallery">IP创意馆</a>
+                <a href="#index.html#culture" class="text-primary font-semibold">IP文创专区</a>
+                <a href="#index.html#h5-experience">互动H5</a>
+                <a href="#index.html#service">助农服务</a>
+                <a href="#index.html#join">商户入驻</a>
+                <a href="#index.html#about">关于我们</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <!--面包屑-->
+        <div class="text-sm text-gray-500 mb-6">
+            <a href="index.html" class="hover:text-primary">首页</a>
+            <span> > </span>
+            <span class="text-gray-700">IP文创专区</span>
+        </div>
+
+        <div class="bg-white rounded-xl p-8 shadow-sm">
+            <h1 class="text-center text-3xl font-bold text-gray-800 mb-4">IP文创专区</h1>
+            <p class="text-center text-gray-600 mb-8">廊坊县域特色农产品卡通IP矩阵｜三河小熏鸡、大城金丝小枣、霸州胜芳蟹、固安蜜李、大厂肥牛、永清番茄、香河肉饼、文安小无籽西瓜</p>
+
+            <!-- 切换标签按钮 -->
+            <div class="flex flex-wrap justify-center gap-3 mb-6">
+                <button class="tab-btn active" data-id="xiaoxunji">三河小熏鸡</button>
+                <button class="tab-btn" data-id="xiaozao">大城金丝小枣</button>
+                <button class="tab-btn" data-id="pangxie">霸州胜芳蟹</button>
+                <button class="tab-btn" data-id="mili">固安蜜李</button>
+                <button class="tab-btn" data-id="feiniu">大厂肥牛</button>
+                <button class="tab-btn" data-id="fanqie">永清番茄</button>
+                <button class="tab-btn" data-id="roubing">香河肉饼</button>
+                <button class="tab-btn" data-id="xigua">文安小无籽西瓜</button>
+            </div>
+
+            <!--IP描述文字区域 -->
+            <div class="desc-area text-center text-gray-600 mb-8">
+                三河小熏鸡IP，以自信小厨师形象呈现三河熏鸡的非遗美食文化与烟火气息。
+            </div>
+
+            <!--两个大卡片：IP海报 + IP衍生品设计 -->
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="item-card">
+                    <img id="posterImg" src="sanhehaibao.jpg" alt="IP海报" class="w-full rounded-lg mb-3 cursor-zoom-in">
+                    <p class="text-center font-medium">IP海报</p>
+                </div>
+                <div class="item-card">
+                    <img id="designImg" src="sanhezhoubian.jpg" alt="IP衍生品设计" class="w-full rounded-lg mb-3 cursor-zoom-in">
+                    <p class="text-center font-medium">IP衍生品设计</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ==========图片放大弹窗遮罩层========== -->
+    <div id="imgModal" class="fixed inset-0 bg-black/85 z-50 hidden flex items-center justify-center p-4">
+        <img id="modalImg" class="max-w-full max-h-full object-contain rounded-md">
+    </div>
+
+    <!--底部深色版权栏，和sanhe.html完全一致-->
+    <footer class="mt-10 bg-darkblue text-white py-8 text-center text-sm">
+        <h3 class="font-bold mb-2">匠心筑品·数智兴农</h3>
+        <p>廊坊农特地标产品AI数字品牌展示平台</p>
+        <p class="mt-4 opacity-80">免责声明：本网站为品牌展示平台，站内所有商品购买链接跳转第三方平台，本平台不参与商品交易履约，不承担相关法律责任。</p>
+        <p class="mt-4">©2026匠心筑品·数智兴农 | 廊坊农特地标AI数字品牌展示平台</p>
+    </footer>
+
+    <script>
+        // 图片预览弹窗逻辑
+        const modal = document.getElementById('imgModal');
+        const modalImg = document.getElementById('modalImg');
+        // 点击图片打开弹窗
+        document.querySelectorAll('#posterImg, #designImg').forEach(img=>{
+            img.addEventListener('click',function(){
+                modalImg.src = this.src;
+                modal.classList.remove('hidden');
+            })
+        })
+        // 点击遮罩关闭弹窗
+        modal.addEventListener('click',()=>{
+            modal.classList.add('hidden');
+        })
+
+        // 每个IP配置：描述、海报图、衍生品图
+        const ipData = {
+            xiaoxunji: {
+                desc: "三河小熏鸡IP，以自信小厨师形象呈现三河熏鸡的非遗美食文化与烟火气息。",
+                poster: "sanhehaibao.jpg",
+                deriveImg: "sanhezhoubian.jpg"
+            },
+            xiaozao: {
+                desc: "大城金丝小枣IP，甜美枣宝形象，展现金丝小枣红润饱满、甘甜绵密的特色。",
+                poster: "dachenghaibao.jpg",
+                deriveImg: "dachengzhoubian.jpg"
+            },
+            pangxie: {
+                desc: "霸州胜芳蟹IP，机灵水乡小蟹角色，凸显胜芳水乡河蟹鲜活灵动的地域特色。",
+                poster: "bazhouhaibao.jpg",
+                deriveImg: "bazhouzhoubian.jpg"
+            },
+            mili: {
+                desc: "固安蜜李IP，以圆滚滚蜜李虚拟角色突出水润、清甜、果香与地域鲜果特色。",
+                poster: "guanhaibao.jpg",
+                deriveImg: "guanzhoubian.jpg"
+            },
+            feiniu: {
+                desc: "大厂肥牛IP，牧场守护者卡通形象，展现大厂肥牛优良牧场与优质肉牛产业。",
+                poster: "dachanghaibao.jpg",
+                deriveImg: "dachangzhoubian.jpg"
+            },
+            fanqie: {
+                desc: "永清番茄IP，阳光番茄宝宝，充满田园活力，体现永清生态番茄种植特色。",
+                poster: "yongqinghaibao.jpg",
+                deriveImg: "yongqingzhoubian.jpg"
+            },
+            roubing: {
+                desc: "香河肉饼IP，面点小厨卡通形象，传承香河肉饼非遗面食文化。",
+                poster: "xianghehaibao.jpg",
+                deriveImg: "xianghezhoubian.jpg"
+            },
+            xigua: {
+                desc: "文安小无籽西瓜IP，西瓜小精灵，清爽活泼，展现文安西瓜皮薄瓤红清甜特质。",
+                poster: "wenanhaibao.jpg",
+                deriveImg: "wenanzhoubian.jpg"
+            }
+        }
+
+        const buttons = document.querySelectorAll('.tab-btn');
+        const descDom = document.querySelector('.desc-area');
+        const posterImg = document.querySelector('#posterImg');
+        const designImg = document.querySelector('#designImg');
+
+        buttons.forEach(btn=>{
+            btn.addEventListener('click',()=>{
+                //清除全部active
+                buttons.forEach(b=>b.classList.remove('active'));
+                btn.classList.add('active');
+                const key = btn.dataset.id;
+                const data = ipData[key];
+                //更新文字、两张图片
+                descDom.innerText = data.desc;
+                posterImg.src = data.poster;
+                designImg.src = data.deriveImg;
+            })
+        })
+    </script>
+</body>
+</html>

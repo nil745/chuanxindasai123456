@@ -1,1 +1,386 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>匠心筑品·数智兴农｜廊坊农特地标产品AI数字品牌展示平台</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2E9968',
+                        gold: '#E8B86D',
+                        tech: '#54A0FF',
+                        bgcream: '#F9F9F7',
+                    },
+                    fontFamily: {
+                        sans: ['"Noto Sans SC"', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .card-shadow {
+                box-shadow: 0 4px 16px rgba(46, 153, 104, 0.12);
+            }
+            .card-hover {
+                transition: all 0.3s ease;
+            }
+            .card-hover:hover {
+                transform: translateY(-6px);
+                box-shadow: 0 8px 24px rgba(46, 153, 104, 0.2);
+            }
+        }
+    </style>
+</head>
+<body class="bg-bgcream text-gray-700 font-sans">
+    <!-- 导航栏 -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur shadow-sm">
+        <div class="container mx-auto px-4 py-3 flex flex-wrap items-center justify-between">
+            <a href="#" class="text-primary font-bold text-xl">匠心筑品·数智兴农</a>
+            <button id="menuBtn" class="md:hidden text-gray-700 text-xl">
+                <i class="fa fa-bars"></i>
+            </button>
+            <nav id="navMenu" class="hidden w-full md:flex md:w-auto md:items-center mt-3 md:mt-0">
+                <ul class="flex flex-col md:flex-row md:gap-6">
+                    <li><a href="#home" class="py-1 block hover:text-primary">首页</a></li>
+                    <li><a href="#showroom" class="py-1 block hover:text-primary">农品数字展厅</a></li>
+                    <li><a href="#ip-gallery" class="py-1 block hover:text-primary">IP创意馆</a></li>
+                    <li><a href="#culture" class="py-1 block hover:text-primary">IP文创专区</a></li>
+                    <li><a href="#h5-experience" class="py-1 block hover:text-primary">互动H5</a></li>
+                    <li><a href="#service" class="py-1 block hover:text-primary">助农服务</a></li>
+                    <li><a href="#join" class="py-1 block hover:text-primary">商户入驻</a></li>
+                    <li><a href="#about" class="py-1 block hover:text-primary">关于我们</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
+    <!-- 首页Banner -->
+    <section id="home" class="bg-gradient-to-br from-primary/10 to-white py-16 md:py-24">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold text-primary mb-4">匠心筑品·数智兴农</h1>
+            <p class="text-[clamp(1.1rem,2vw,1.4rem)] text-gray-600 mb-2">廊坊农特地标产品AI数字品牌展示平台</p>
+            <p class="text-gray-500 mb-8">AI赋能乡土品牌，数字激活廊坊农品</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#showroom" class="bg-primary text-white px-6 py-3 rounded-full card-hover">进入数字展厅</a>
+                <a href="#ip-gallery" class="border border-primary text-primary px-6 py-3 rounded-full card-hover">查看原创IP</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 农品数字展厅总览 -->
+    <section id="showroom" class="py-14 bg-bgcream">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-2">廊坊八大农特地标 · 数字品牌展厅</h2>
+            <p class="text-center text-gray-500 mb-10">汇聚廊坊县域名优农品，原创IP+AI数字内容，重塑乡土品牌形象</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- 卡片1 三河小熏鸡 -->
+                <div class="bg-white rounded-2xl p-5 card-shadow card-hover">
+                   <img src="sanheji.jpg" alt="三河小熏鸡封面" class="w-full h-40 object-cover rounded-xl mb-4">
+                    <h3 class="font-bold text-lg">三河小熏鸡</h3>
+                    <p class="mt-2 text-sm">百年非遗，果木熏制，京津经典美食。</p>
+                    <a href="sanhe.html" class="mt-4 text-primary text-sm inline-block">查看详情 →</a>
+                </div>
+                <!-- 卡片2 香河肉饼 -->
+                <div class="bg-white rounded-2xl p-5 card-shadow card-hover">
+                    <img src="xiangheroubing.jpg" alt="香河肉饼封面" class="w-full h-40 object-cover rounded-xl mb-4">
+                    <h3 class="font-bold text-lg">香河肉饼</h3>
+                    <p class="mt-2 text-sm">省级非遗，皮薄肉足，一口爆汁。</p>
+                    <a href="xianghe.html" class="mt-4 text-primary text-sm inline-block">查看详情 →</a>
+                </div>
+                <!-- 卡片3 大厂肥牛 -->
+                <div class="bg-white rounded-2xl p-5 card-shadow card-hover">
+                    <img src="dachangfengniu.jpg" alt="大厂肥牛封面" class="w-full h-40 object-cover rounded-xl mb-4">
+                    <h3 class="font-bold text-lg">大厂肥牛</h3>
+                    <p class="mt-2 text-sm">生态牧场，肉质鲜嫩，高端肉品。</p>
+                    <a href="dachang.html" class="mt-4 text-primary text-sm inline-block">查看详情 →</a>
+                </div>
+                <!-- 卡片4 永清番茄 -->
+                <div class="bg-white rounded-2xl p-5 card-shadow card-hover">
+                    <img src="yongqingfangqie.jpg" alt="永清番茄封面" class="w-full h-40 object-cover rounded-xl mb-4">
+                    <h3 class="font-bold text-lg">永清番茄</h3>
+                    <p class="mt-2 text-sm">温室精品，果香浓郁，自然成熟。</p>
+                    <a href="yongqing.html" class="mt-4 text-primary text-sm inline-block">查看详情 →</a>
+                </div>
+                <!-- 卡片5 大城金丝小枣 -->
+                <div class="bg-white rounded-2xl p-5 card-shadow card-hover">
+                    <img src="dachengzao.jpg" alt="大成金丝小枣封面" class="w-full h-40 object-cover rounded-xl mb-4">
+                    <h3 class="font-bold text-lg">大城金丝小枣</h3>
+                    <p class="mt-2 text-sm">肉厚核小，甘甜绵长，历史悠久。</p>
+                    <a href="dacheng.html" class="mt-4 text-primary text-sm inline-block">查看详情 →</a>
+                </div>
+                <!-- 卡片6 霸州胜芳蟹 -->
+                <div class="bg-white rounded-2xl p-5 card-shadow card-hover">
+                    <img src="bazhouxie.jpg" alt="霸州胜芳蟹封面" class="w-full h-40 object-cover rounded-xl mb-4">
+                    <h3 class="font-bold text-lg">霸州胜芳蟹</h3>
+                    <p class="mt-2 text-sm">水乡特产，膏肥味鲜，胜芳名产。</p>
+                    <a href="bazhou.html" class="mt-4 text-primary text-sm inline-block">查看详情 →</a>
+                </div>
+                <!-- 卡片7 固安蜜李 -->
+                <div class="bg-white rounded-2xl p-5 card-shadow card-hover">
+                    <img src="guanli.jpg" alt="固安蜜李封面" class="w-full h-40 object-cover rounded-xl mb-4">
+                    <h3 class="font-bold text-lg">固安蜜李</h3>
+                    <p class="mt-2 text-sm">果肉饱满，蜜甜多汁，本地特色。</p>
+                    <a href="guan.html" class="mt-4 text-primary text-sm inline-block">查看详情 →</a>
+                </div>
+                <!-- 卡片8 文安小无籽西瓜 -->
+                <div class="bg-white rounded-2xl p-5 card-shadow card-hover">
+                    <img src="wenanxigua.jpg" alt="文安小无籽西瓜封面" class="w-full h-40 object-cover rounded-xl mb-4">
+                    <h3 class="font-bold text-lg">文安小无籽西瓜</h3>
+                    <p class="mt-2 text-sm">皮薄无籽，清甜爽口，夏日佳品。</p>
+                    <a href="wenan.html" class="mt-4 text-primary text-sm inline-block">查看详情 →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- IP创意馆 -->
+    <section id="ip-gallery" class="py-14 bg-white">
+      <div class="container mx-auto px-4">
+          <h2 class="text-2xl md:text-3xl font-bold text-center mb-2">原创八大农品IP形象体系</h2>
+          <p class="text-center text-gray-500 mb-10">一改传统农产品老旧宣传模式，以年轻化萌系IP，实现老特产新表达</p>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-5">
+
+              <!-- 1.三河小熏鸡 -->
+              <div class="p-4 rounded-xl bg-bgcream text-center card-hover">
+                  <div class="w-28 h-28 mx-auto rounded-full overflow-hidden flex items-center justify-center mb-3">
+                     <img src="sanhe.jpg" alt="三河小熏鸡IP形象" class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="font-semibold">三河小熏鸡｜非遗小厨师</h4>
+                    <p class="text-sm text-gray-500 mt-1">元气小厨师IP，身披油亮熏鸡外皮，头戴厨师帽，手持木质招牌。充满市井烟火气息，展现三河熏鸡传统熏制技艺。</p>
+                </div>
+
+                <!-- 2.香河肉饼 -->
+                <div class="p-4 rounded-xl bg-bgcream text-center card-hover">
+                   <div class="w-28 h-28 mx-auto rounded-full overflow-hidden flex items-center justify-center mb-3">
+                     <img src="xianghe.jpg" alt="香河肉饼IP形象" class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="font-semibold">香河肉饼｜面点美食家</h4>
+                    <p class="text-sm text-gray-500 mt-1">软萌饼形卡通形象，金黄焦脆饼皮，圆润小手小脚，笑容治愈。还原香河肉饼外酥里嫩的风味，传递面食美食的温暖。</p>
+                </div>
+
+                <!--3.大厂肥牛 -->
+                <div class="p-4 rounded-xl bg-bgcream text-center card-hover">
+                   <div class="w-28 h-28 mx-auto rounded-full overflow-hidden flex items-center justify-center mb-3">
+                     <img src="dachang.jpg" alt="大厂肥牛IP形象" class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="font-semibold">大厂肥牛｜牧场守护者</h4>
+                    <p class="text-sm text-gray-500 mt-1">肉卷造型IP，肥瘦纹理层次清晰，脸蛋藏在肉卷中间，眉眼弯弯。代表大厂肉牛产业，体现肥牛鲜香醇厚的特色。</p>
+                </div>
+
+                <!--4.永清番茄 -->
+                <div class="p-4 rounded-xl bg-bgcream text-center card-hover">
+                   <div class="w-28 h-28 mx-auto rounded-full overflow-hidden flex items-center justify-center mb-3">
+                     <img src="yongqing.jpg" alt="永清番茄IP形象" class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="font-semibold">永清番茄｜阳光田园少女</h4>
+                    <p class="text-sm text-gray-500 mt-1">圆润饱满的番茄宝宝，头顶翠绿果蒂，四肢灵动。形象阳光开朗，象征永清番茄生态种植、新鲜多汁的产品优势。</p>
+                </div>
+
+                <!--5.大城金丝小枣 -->
+                <div class="p-4 rounded-xl bg-bgcream text-center card-hover">
+                   <div class="w-28 h-28 mx-auto rounded-full overflow-hidden flex items-center justify-center mb-3">
+                     <img src="dacheng.jpg" alt="大城金丝小枣IP形象" class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="font-semibold">大城金丝小枣｜甜美枣宝宝</h4>
+                    <p class="text-sm text-gray-500 mt-1">甜美的红枣宝宝，枣身带天然白霜，身着小围裙，双手捧出金丝丝丝。表现金丝小枣果肉绵密、拉丝绵长的特点。</p>
+                </div>
+
+                 <!--6.霸州胜芳蟹 -->
+                 <div class="p-4 rounded-xl bg-bgcream text-center card-hover">
+                   <div class="w-28 h-28 mx-auto rounded-full overflow-hidden flex items-center justify-center mb-3">
+                     <img src="bazhou.jpg" alt="霸州胜芳蟹IP形象" class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="font-semibold">霸州胜芳蟹｜水乡机灵小蟹</h4>
+                    <p class="text-sm text-gray-500 mt-1">机灵水乡小螃蟹，青绿色蟹壳，头戴草帽、系围巾，立于水波之上。灵动俏皮，彰显胜芳水乡特产鲜活肥美的特质。</p>
+                </div>
+
+                <!--7.固安蜜李 -->
+                <div class="p-4 rounded-xl bg-bgcream text-center card-hover">
+                   <div class="w-28 h-28 mx-auto rounded-full overflow-hidden flex items-center justify-center mb-3">
+                     <img src="guan.jpg" alt="固安蜜李IP形象" class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="font-semibold">固安蜜李｜清甜李子精灵</h4>
+                    <p class="text-sm text-gray-500 mt-1">紫粉圆润蜜李形象，果皮挂着晶莹水珠，神态乖巧恬静。凸显固安蜜李汁水充盈、果香浓郁的鲜果特点。</p>
+                </div>
+
+                <!--8.文安小无籽西瓜 -->
+                <div class="p-4 rounded-xl bg-bgcream text-center card-hover">
+                   <div class="w-28 h-28 mx-auto rounded-full overflow-hidden flex items-center justify-center mb-3">
+                     <img src="wenan.png" alt="文安小无籽西瓜IP形象" class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="font-semibold">文安小无籽西瓜｜西瓜小将</h4>
+                    <p class="text-sm text-gray-500 mt-1">清爽西瓜娃娃，绿纹瓜身搭配卷曲瓜藤，穿着青背带裤，活泼可爱。展现文安无籽西瓜清甜爽口的原生品质。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- IP文创专区（修改为3个卡片） -->
+    <section id="culture" class="py-14 bg-bgcream">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-2">IP文创专区</h2>
+            <p class="text-center text-gray-500 mb-10">廊坊特色农品IP衍生文创，把乡土特产IP带回家</p>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                <!-- 三河小熏鸡 文创 -->
+                <a href="IPwenchuang.html" class="bg-white p-5 rounded-xl card-shadow card-hover text-center block">
+                    <img src="sanhesheji .jpg" alt="三河小熏鸡文创封面" class="w-full h-40 object-cover rounded-xl mb-4">
+                    <h4 class="font-semibold text-lg">三河小熏鸡文创</h4>
+                    <p class="text-sm text-gray-500 mt-2">非遗小厨师IP盲盒、贴纸、钥匙扣</p>
+                </a>
+                <!-- 大城金丝小枣 文创 -->
+                <a href="IPwenchuang.html" class="bg-white p-5 rounded-xl card-shadow card-hover text-center block">
+                    <img src="dachengsheji .jpg" alt="大城金丝小枣文创封面" class="w-full h-40 object-cover rounded-xl mb-4">
+                    <h4 class="font-semibold text-lg">大城金丝小枣文创</h4>
+                    <p class="text-sm text-gray-500 mt-2">甜美枣宝盲盒、书签、贴纸套装</p>
+                </a>
+                <!-- 霸州胜芳蟹 文创 -->
+                <a href="IPwenchuang.html" class="bg-white p-5 rounded-xl card-shadow card-hover text-center block">
+                    <img src="bazhousheji.jpg" alt="霸州胜芳蟹文创封面" class="w-full h-40 object-cover rounded-xl mb-4">
+                    <h4 class="font-semibold text-lg">霸州胜芳蟹文创</h4>
+                    <p class="text-sm text-gray-500 mt-2">水乡小蟹冰箱贴、钥匙扣、立牌</p>
+                </a>
+            </div>
+            <p class="text-center mt-8 text-gray-500 text-sm">更多廊坊八大农品IP文创，点击卡片前往查看。文创产品仅展示，购买跳转第三方渠道。平台不参与交易履约。</p>
+        </div>
+    </section>
+
+    <!-- ==========互动H5板块========== -->
+    <section id="h5-experience" class="py-14 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-2">互动H5体验</h2>
+            <p class="text-center text-gray-500 mb-10">探索廊坊八大农品IP动画故事，沉浸式感受农品文创魅力</p>
+            <div class="flex flex-wrap justify-center items-center gap-10">
+                <div class="text-center">
+                    <h4 class="text-lg font-semibold mb-4">💻 电脑端访问</h4>
+                    <a href="https://m.u.h5mc.com/c/pqd4/lsp4/index.html" target="_blank" class="bg-primary text-white px-6 py-3 rounded-full card-hover inline-block">点击进入H5</a>
+                </div>
+                <div class="text-center">
+                    <h4 class="text-lg font-semibold mb-4">📱 手机扫码访问</h4>
+                    <img src="H5.png" alt="H5二维码" class="w-56 rounded-xl border-8 border-white shadow-md mx-auto">
+                    <p class="mt-3 text-gray-500 text-sm">手机扫描二维码打开互动H5</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 助农增值服务 -->
+    <section id="service" class="py-14 bg-bgcream">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-8">助农增值服务</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white rounded-2xl p-6 card-shadow">
+                    <h3 class="font-bold text-lg text-primary mb-2"><i class="fa fa-paint-brush mr-2"></i>农品IP形象定制</h3>
+                    <p class="text-gray-600">为涉农主体定制专属农产品卡通IP，打造差异化品牌符号。</p>
+                </div>
+                <div class="bg-white rounded-2xl p-6 card-shadow">
+                    <h3 class="font-bold text-lg text-primary mb-2"><i class="fa fa-film mr-2"></i>AI短视频/海报批量制作</h3>
+                    <p class="text-gray-600">批量产出宣传物料，降低农户新媒体宣传成本。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 商户入驻 -->
+    <section id="join" class="py-14 bg-white">
+        <div class="container mx-auto px-4 max-w-2xl">
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-8">商户入驻</h2>
+            <div class="bg-bgcream rounded-2xl p-6 card-shadow">
+                <p class="mb-4 text-gray-600">本地农业合作社、涉农企业、农户可申请入驻数字展厅，展示农品与品牌故事。</p>
+                <form id="joinForm" class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium mb-1">单位名称</label>
+                        <input type="text" id="company" class="w-full border rounded-lg px-3 py-2" placeholder="请输入">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-1">联系人</label>
+                        <input type="text" id="contactName" class="w-full border rounded-lg px-3 py-2" placeholder="请输入">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-1">联系方式</label>
+                        <input type="text" id="contactTel" class="w-full border rounded-lg px-3 py-2" placeholder="请输入">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-1">产品简介</label>
+                        <textarea id="productIntro" class="w-full border rounded-lg px-3 py-2" rows="3" placeholder="请输入"></textarea>
+                    </div>
+                    <div class="p-4 bg-red-50 text-red-600 text-sm rounded-lg">
+                        <strong>入驻须知：</strong>本平台仅提供品牌展示宣传服务，不涉及食品交易、物流、售后、结算。所有商品购买跳转第三方渠道。
+                    </div>
+                    <button type="submit" class="w-full bg-primary text-white py-3 rounded-lg">提交入驻申请（演示）</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- 关于我们 -->
+    <section id="about" class="py-14 bg-bgcream">
+        <div class="container mx-auto px-4 max-w-3xl">
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-8">关于我们</h2>
+            <div class="bg-white rounded-2xl p-6 card-shadow">
+                <p class="text-gray-600 mb-4">本项目为河北省中华职业教育创新创业大赛参赛项目。团队依托AI内容生成技术，聚焦廊坊八大农特地标产品，打造数字品牌展示平台，助力乡村振兴。</p>
+                <p class="text-gray-600">项目愿景：以数字匠心，赋能廊坊乡土农品，让廊坊地标特产借助数字IP走向更大市场。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-gray-800 text-white py-10 mt-10">
+        <div class="container mx-auto px-4">
+            <div class="text-center">
+                <h3 class="text-xl font-bold mb-3">匠心筑品·数智兴农</h3>
+                <p class="text-gray-300 text-sm">廊坊农特地标产品AI数字品牌展示平台</p>
+                <div class="my-4 text-gray-400 text-xs max-w-2xl mx-auto">
+                    免责声明：本网站为品牌展示平台，站内所有商品购买链接跳转至第三方平台，本平台不直接从事食品销售，不承担交易履约、售后等相关责任。
+                </div>
+                <p class="text-gray-400 text-sm">© 2026 匠心筑品·数智兴农项目团队 | 职教双创大赛演示网站</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        //移动端菜单切换
+        const menuBtn = document.getElementById('menuBtn');
+        const navMenu = document.getElementById('navMenu');
+        menuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('hidden');
+        })
+        //平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                //移动端点击自动收起菜单
+                if(!navMenu.classList.contains('hidden')){
+                    navMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        //商户入驻表单提交校验弹窗
+        const joinForm = document.getElementById("joinForm");
+        joinForm.addEventListener("submit",function(e){
+            e.preventDefault();
+            const company = document.getElementById("company").value.trim();
+            const contactName = document.getElementById("contactName").value.trim();
+            const contactTel = document.getElementById("contactTel").value.trim();
+            const productIntro = document.getElementById("productIntro").value.trim();
+            if(!company || !contactName || !contactTel || !productIntro){
+                alert("提示：请完整填写全部表单信息后再提交！");
+                return;
+            }
+            alert("✅ 入驻申请提交成功！\n本页面为静态演示Demo，数据仅模拟，不会上传后台。");
+            joinForm.reset();
+        })
+    </script>
+</body>
+</html>
